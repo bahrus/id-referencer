@@ -6,9 +6,28 @@
 
 ```JS
 customElements.assignFeatures(MyHTMLElement, {
-    idReferencer: { spawn: CommandFeatureImpl }
+    idReferencer: { 
+        spawn: IDReferencer,
+        customData: {
+            searchFor: ['for', 'aria-controls']
+        } 
+    }
 });
+```
 
+What this does:
+
+1.  Monitors for changes to these attributes
+2.  Parses the attributes based on normalized space delimiter.
+3.  Searches for elements matching the ids.
+4.  Creates weak references to them accessible via:
+
+```TS
+const forRefs = oMyHTMLElement.idReferencer.for as WeakRef<Element>[];
+const ariaControls = oMyHTMLElement.idReferencer.ariaControls as WeakRef<Element>[];
+```
+
+The moment all the id's have been found for an attribute, the feature can "rest" when it comes to that attribute, as long as the value doesn't change.  In contrast, if not all matching elements are found, a mutation observer should be created on the root node, and keep testing new elements for matching id.
 
 
 ## Viewing Demos Locally
