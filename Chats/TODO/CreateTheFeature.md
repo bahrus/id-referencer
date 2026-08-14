@@ -71,3 +71,13 @@ But first, please indicate any ambiguities / issues / suggestions for improvemen
 
 7. **Consider using `withAttrs` for the attribute list itself.** If the feature is meant to be configured entirely through `assignFeatures`, `customData` is fine. If it should also parse attributes on the element, use `withAttrs` with a base prefix such as `id-referencer`.
 
+---
+
+## Human Response I
+
+>  Should `searchFor` be supplied as `customData` in the `assignFeatures` config, or should it be parsed from attributes (e.g. `id-referencer-search-for="for aria-controls"`)
+
+The former.
+
+The purpose of this feature is to provide 
+
