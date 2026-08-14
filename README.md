@@ -2,6 +2,13 @@
 
 *id-referencer* is a custom element feature that searches for DOM elements matching id references from specified attributes / properties.
 
+## Usage
+
+```JS
+customElements.assignFeatures(MyHTMLElement, {
+    idReferencer: { spawn: CommandFeatureImpl }
+});
+
 
 
 ## Viewing Demos Locally
