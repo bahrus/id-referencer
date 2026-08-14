@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button commandfor="my-div" command="--hide">Hide</button>
+    <button commandfor="my-div" command="--show">Show</button>
+    <div id="my-div">hello</div>
+    <script>
+        self['my-div'].addEventListener('command', e => {
+            switch(e.command){
+                case '--hide':
+                    e.target.setAttribute('hidden', '');
+                    break;
+                case '--show':
+                    e.target.removeAttribute('hidden');
+                    break;
+
+            }
+        })
+    </script>
+</body>
+</html>

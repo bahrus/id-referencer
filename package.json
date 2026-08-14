@@ -15,6 +15,13 @@
   "type": "module",
   "main": "IDReferencer.js",
   "scripts": {
-    "test": "playwright test"
+    "serve": "node ./node_modules/spa-ssi/serve.js",
+    "test": "playwright test",
+    "update": "ncu -u && npm install",
+    "safari": "npx playwright wk http://localhost:8000"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "spa-ssi": "0.0.27"
   }
 }
