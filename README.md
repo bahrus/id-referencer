@@ -1,5 +1,9 @@
 # id-referencer
 
+*id-referencer* is a custom element feature that searches for DOM elements matching id references from specified attributes / properties.
+
+
+
 ## Viewing Demos Locally
 
 1. Install git
