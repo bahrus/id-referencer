@@ -27,7 +27,7 @@ const forRefs = oMyHTMLElement.idReferencer.for as WeakRef<Element>[];
 const ariaControls = oMyHTMLElement.idReferencer.ariaControls as WeakRef<Element>[];
 ```
 
-The moment all the id's have been found for an attribute, the feature can "rest" when it comes to that attribute, as long as the value doesn't change.  In contrast, if not all matching elements are found, a mutation observer should be created on the root node, and keep testing new elements for matching id.
+5.  The moment all the id's have been found for an attribute, the feature can "rest" when it comes to that attribute, as long as the attribute value doesn't change.  In contrast, if not all matching elements are found, a mutation observer should be created on the root node, and keep testing new elements for matching id.
 
 
 ## Viewing Demos Locally
